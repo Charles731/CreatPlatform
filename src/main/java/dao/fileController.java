@@ -1,4 +1,4 @@
-package controller;
+package dao;
 
 /**
  * Created by User on 2017/10/26.
