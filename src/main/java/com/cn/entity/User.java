@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by User on 2017/10/26.
  */
 @Component
-public class user {
+public class User {
 
     /*
     * 文件id，密码，电子邮件，电话号码

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by User on 2017/10/26.
  */
 @Component
-public class help {
+public class Help {
 
     /*
     * 帮助id，咨询的问题和答案

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by User on 2017/10/26.
  */
 @Component
-public class forum {
+public class Forum {
 
     /*
     * 发帖的id，标题，内容

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by User on 2017/10/26.
  */
 @Component
-public class store {
+public class Store {
 
     /*
     * 商品的id，名字，价格

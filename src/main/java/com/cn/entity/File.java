@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by User on 2017/10/26.
  */
 @Component
-public class file {
+public class File {
 
     /*
     * 文件id，名字，相关描述
