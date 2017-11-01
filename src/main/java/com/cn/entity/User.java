@@ -12,6 +12,7 @@ public class User {
     * 文件id，密码，电子邮件，电话号码
     * */
     private int u_id;
+    private String u_name;
     private String password;
     private String email;
     private String phone;
@@ -22,6 +23,14 @@ public class User {
 
     public void setU_id(int u_id) {
         this.u_id = u_id;
+    }
+
+    public String getU_name() {
+        return u_name;
+    }
+
+    public void setU_name(String u_name) {
+        this.u_name = u_name;
     }
 
     public String getPassword() {
