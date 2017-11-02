@@ -28,7 +28,7 @@ public class UserController {
         return "success";
     }
 
-    @RequestMapping
+    @RequestMapping("login")
     public String login(String name, String password, Model model) {
         System.out.println("用户登录" + name + password);
 
