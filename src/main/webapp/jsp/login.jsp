@@ -27,5 +27,6 @@
         </tr>
     </table>
 </form>
+<%System.out.println("OK");%>
 </body>
 </html>
