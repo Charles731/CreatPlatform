@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("regist")
+    @RequestMapping("/regist")
     public String regist(User user, Model model) {
 
         System.out.println("用户注册：" + user.getU_name()+user.getPassword());
@@ -25,7 +25,7 @@ public class UserController {
 
         model.addAttribute("msg", "注册成功");
         //注册后成功跳转success.jsp页面
-        return "success";
+        return "/WEB-INF/success.jsp";
     }
 
     @RequestMapping("/login")

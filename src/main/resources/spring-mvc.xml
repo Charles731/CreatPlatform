@@ -33,7 +33,7 @@
        <!-- 定义跳转的文件的前后缀，视图模式配置 -->
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
            <!-- 自定给后面的action的方法return的字符串加上前缀和后缀，变成一个可用的url地址 -->
-           <property name="prefix" value="/WIB-INF/jsp" />
+           <property name="prefix" value="/WEB-INF/" />
            <property name="suffix" value=".jsp" />
        </bean>
        <!-- 配置文件上传，如果没有使用文件上传可以不用配置，如果不配，那么配置文件中也不必上传组件包 -->

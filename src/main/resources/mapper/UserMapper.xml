@@ -5,12 +5,12 @@
 <mapper namespace="com.cn.dao.UserDao">
 
     <!-- 注意sql语句没有分号结尾 -->
-    <insert id="addUser" parameterType="User">
+    <insert id="addUser" parameterType="com.cn.entity.User">
         INSERT INTO user(U_ID,U_NAME,PWD,EMAIL,PHONE) VALUES (#{u_id},#{u_name},#{password},#{email},#{phone})
     </insert>
 
     <!-- 注意这里的参数类型是parameterType而不是parameterMap，因为返回的单个类型 -->
-    <select id="findUserByNameAndPwd" parameterType="Map" resultMap="User">
-        SELECT t.u_name,t.password FROM user t WHERE U_NAME = #{u_name} AND PWD = #{password}
+    <select id="findUserByNameAndPwd" parameterType="map" resultType="com.cn.entity.User">
+        SELECT * FROM user WHERE U_NAME = #{u_name} AND PWD = #{password}
     </select>
 </mapper>

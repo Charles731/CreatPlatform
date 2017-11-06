@@ -12,6 +12,6 @@
     <title>登录成功</title>
 </head>
 <body>
-   <a href="${pageContext.request.contextPath }/login.jsp">去登录</a>
+   <a href="${pageContext.request.contextPath }/jsp/login.jsp">去登录</a>
 </body>
 </html>
