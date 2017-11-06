@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * 持久层映射接口
  * Created by User on 2017/10/31.
  */
-
+@Repository("UserDao")
 public interface UserDao {
 
     //添加用户

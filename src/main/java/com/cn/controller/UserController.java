@@ -28,13 +28,14 @@ public class UserController {
         return "success";
     }
 
-    @RequestMapping("login")
+    @RequestMapping("/login")
     public String login(String name, String password, Model model) {
-        System.out.println("用户登录" + name + password);
+        System.out.println("用户登录 " + "账号：" + name + " 密码：" + password);
 
         userService.login(name,password);
+        //userService.regist(new User());
         model.addAttribute("msg", "登陆成功");
-
+        System.out.println("成功");
         return "success";
     }
 
