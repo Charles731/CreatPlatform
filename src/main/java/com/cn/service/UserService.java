@@ -8,7 +8,7 @@ import com.cn.entity.User;
 public interface UserService {
 
     //用户注册
-    void regist(User user);
+    boolean regist(User user);
     //用户登录
-    void login(String name, String password);
+    boolean login(String u_name, String password);
 }

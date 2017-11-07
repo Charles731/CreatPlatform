@@ -16,11 +16,19 @@
         <table border="1">
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="u_name"></td>
             </tr>
             <tr>
                 <td>密码</td>
                 <td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td>电子邮箱</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>电话</td>
+                <td><input type="text" name="phone"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="注册"></td>

@@ -21,22 +21,29 @@ public class UserController {
     public String regist(User user, Model model) {
 
         System.out.println("用户注册：" + user.getU_name()+user.getPassword());
-        userService.regist(user);
+        boolean isSuccess = false;
+        isSuccess = userService.regist(user);
 
-        model.addAttribute("msg", "注册成功");
-        //注册后成功跳转success.jsp页面
-        return "/WEB-INF/success.jsp";
+        if(isSuccess) {
+            model.addAttribute("msg", "注册成功");
+            //注册后成功跳转success.jsp页面
+            return "registSuccess";
+        }
+        return "fail";
     }
 
     @RequestMapping("/login")
-    public String login(String name, String password, Model model) {
-        System.out.println("用户登录 " + "账号：" + name + " 密码：" + password);
+    public String login(String u_name, String password, Model model) {
+        System.out.println("用户登录 " + "账号：" + u_name + " 密码：" + password);
+        boolean isUserExist = false;
+        isUserExist = userService.login(u_name,password);
+        if(isUserExist) {
+            model.addAttribute("u_name",u_name);
+            model.addAttribute("password",password);
+            return "success";
+        }
+        return "fail";
 
-        userService.login(name,password);
-        //userService.regist(new User());
-        model.addAttribute("msg", "登陆成功");
-        System.out.println("成功");
-        return "success";
     }
 
 }

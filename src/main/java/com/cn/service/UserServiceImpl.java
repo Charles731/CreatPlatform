@@ -11,17 +11,33 @@ import org.springframework.stereotype.Service;
  * Created by User on 2017/10/31.
  */
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
 
-    public void regist(User user) {
-        userDao.addUser(user);
+    public boolean regist(User user) {
+        boolean isSuccess = false;
+        int number = 0;
+        number = userDao.addUser(user);
+        if(number > 0) {
+            isSuccess = true;
+            return isSuccess;
+        }
+        return isSuccess;
     }
 
-    public void login(String name, String password) {
-        userDao.findUserByNameAndPwd(name, password);
+    public boolean login(String u_name, String password) {
+        boolean isUserExist = false;
+        User user = userDao.findUserByNameAndPwd(u_name, password);
+        if(user != null) {
+            isUserExist = true;
+            System.out.println("user.password------------->" + userDao.findUserByNameAndPwd(u_name, password).getPassword());
+            return isUserExist;
+        }
+
+        return isUserExist;
+
     }
 }
