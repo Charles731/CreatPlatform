@@ -37,6 +37,7 @@ public class UserController {
         System.out.println("用户登录 " + "账号：" + u_name + " 密码：" + password);
         boolean isUserExist = false;
         isUserExist = userService.login(u_name,password);
+        System.out.println("isUserExist----->" + isUserExist);
         if(isUserExist) {
             model.addAttribute("u_name",u_name);
             model.addAttribute("password",password);

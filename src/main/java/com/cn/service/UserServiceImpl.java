@@ -31,6 +31,7 @@ public class UserServiceImpl implements UserService {
     public boolean login(String u_name, String password) {
         boolean isUserExist = false;
         User user = userDao.findUserByNameAndPwd(u_name, password);
+        System.out.println("User------>" + user);
         if(user != null) {
             isUserExist = true;
             System.out.println("user.password------------->" + userDao.findUserByNameAndPwd(u_name, password).getPassword());
