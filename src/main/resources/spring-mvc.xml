@@ -32,7 +32,6 @@
 
        <!-- 定义跳转的文件的前后缀，视图模式配置 -->
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-           <!-- 自定给后面的action的方法return的字符串加上前缀和后缀，变成一个可用的url地址 -->
            <property name="prefix" value="/WEB-INF/" />
            <property name="suffix" value=".jsp" />
        </bean>
