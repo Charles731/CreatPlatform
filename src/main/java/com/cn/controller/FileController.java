@@ -28,7 +28,6 @@ public class FileController {
     /*
     * 文件上传功能
     * @param file
-    * @return
     * @throw IOException
     * */
     @RequestMapping(value = "/upload" ,method = RequestMethod.POST)
@@ -55,7 +54,6 @@ public class FileController {
     /*
     * 文件自带下载功能
     * @param request
-    * @param response
     * @throws Exception
     * */
     @RequestMapping("/download")
