@@ -28,17 +28,14 @@ public class UserServiceImpl implements UserService {
         return isSuccess;
     }
 
-    public boolean login(String u_name, String password) {
-        boolean isUserExist = false;
+    public User login(String u_name, String password) {
         User user = userDao.findUserByNameAndPwd(u_name, password);
         System.out.println("User------>" + user);
         if(user != null) {
-            isUserExist = true;
             System.out.println("user.password------------->" + userDao.findUserByNameAndPwd(u_name, password).getPassword());
-            return isUserExist;
+            return user;
         }
-
-        return isUserExist;
+        return null;
 
     }
 }

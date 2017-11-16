@@ -4,8 +4,9 @@ import com.cn.entity.User;
 import com.cn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by User on 2017/10/27.
@@ -17,10 +18,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/regist")
+    /*@RequestMapping("/regist")
     public String regist(User user, Model model) {
 
-        System.out.println("用户注册：" + user.getU_name()+user.getPassword());
+        System.out.println("用户注册：" + user.getU_name()+user.getPassword());-
         boolean isSuccess = false;
         isSuccess = userService.regist(user);
 
@@ -30,9 +31,18 @@ public class UserController {
             return "registSuccess";
         }
         return "fail";
-    }
+    }*/
 
-    @RequestMapping("/login")
+    @RequestMapping("/regist")
+    @ResponseBody
+    public boolean regist(@RequestBody User user) {
+
+        System.out.println("用户注册：" + user.getU_name()+user.getPassword());
+        boolean isSuccess = false;
+        isSuccess = userService.regist(user);
+        return isSuccess;
+    }
+    /*@RequestMapping("/login")
     public String login(String u_name, String password, Model model) {
         System.out.println("用户登录 " + "账号：" + u_name + " 密码：" + password);
         boolean isUserExist = false;
@@ -46,5 +56,15 @@ public class UserController {
         return "fail";
 
     }
-
+*/
+    @RequestMapping("/login")
+    @ResponseBody
+    public User login(@RequestBody User requestUser) {
+        String u_name = requestUser.getU_name();
+        String password = requestUser.getPassword();
+        boolean isUserExist = false;
+        User user = userService.login(u_name,password);
+        System.out.println("isUserExist----->" + isUserExist);
+        return user;
+    }
 }
