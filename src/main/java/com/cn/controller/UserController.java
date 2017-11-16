@@ -62,9 +62,8 @@ public class UserController {
     public User login(@RequestBody User requestUser) {
         String u_name = requestUser.getU_name();
         String password = requestUser.getPassword();
-        boolean isUserExist = false;
+        System.out.println(u_name);
         User user = userService.login(u_name,password);
-        System.out.println("isUserExist----->" + isUserExist);
         return user;
     }
 }

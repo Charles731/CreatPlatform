@@ -1,6 +1,7 @@
 package com.cn.dao;
 
 import com.cn.entity.Admin;
+import com.cn.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -16,5 +17,8 @@ public interface AdminDao {
 
     // 删除用户
     public int deleteUser(int u_id);
+
+    //根据用户名查找用户
+    public User findUserByName(String u_name);
 
 }

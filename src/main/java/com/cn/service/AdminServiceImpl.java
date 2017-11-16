@@ -2,6 +2,7 @@ package com.cn.service;
 
 import com.cn.dao.AdminDao;
 import com.cn.entity.Admin;
+import com.cn.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,5 +36,15 @@ public class AdminServiceImpl implements AdminService {
             return isSuccess;
         }
         return isSuccess;
+    }
+
+    public User findUserByName(String u_name) {
+        User user = adminDao.findUserByName(u_name);
+        System.out.println("User------>" + user);
+        if(user != null) {
+            System.out.println("user.password------------->" + adminDao.findUserByName(u_name));
+            return user;
+        }
+        return null;
     }
 }

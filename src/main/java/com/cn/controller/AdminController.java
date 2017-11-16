@@ -1,6 +1,7 @@
 package com.cn.controller;
 
 import com.cn.entity.Admin;
+import com.cn.entity.User;
 import com.cn.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,22 +35,30 @@ public class AdminController {
 //        return "fail";
 //
 //    }
+//    管理员登录
       @RequestMapping("/adLogin")
       @ResponseBody
       public Admin adLogin(@RequestBody Admin requestAdmin) {
            String a_name = requestAdmin.getA_name();
            String a_password = requestAdmin.getA_password();
-           boolean isAdminExist = false;
            Admin admin = adminService.adLogin(a_name,a_password);
-           System.out.println("isAdminExist----->" + isAdminExist);
            return admin;
      }
 
+//    删除用户
     @RequestMapping("/deleteUser/{u_id}")
     @ResponseBody
     public boolean deleteUser(@PathVariable("u_id")int u_id) {
         boolean isSuccess = false;
         isSuccess = adminService.deleteUser(u_id);
         return isSuccess;
+    }
+
+   //根据用户名查找用户
+    @RequestMapping("/findUserByName/{u_name}")
+    @ResponseBody
+    public User findUserByName(@PathVariable("u_name")String u_name) {
+        User user = adminService.findUserByName(u_name);
+        return user;
     }
 }
