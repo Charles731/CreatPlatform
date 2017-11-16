@@ -18,4 +18,5 @@ public interface UserDao {
     //根据用户名和密码查询用户
     //注解的两个参数会自动封装成map集合，括号内即为键
     public User findUserByNameAndPwd(@Param("u_name") String u_name, @Param("password") String password);
+
 }

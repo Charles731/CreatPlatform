@@ -20,4 +20,5 @@
     <select id="findUserByNameAndPwd" parameterType="map" resultMap="user">
         SELECT * FROM user1 WHERE U_NAME = #{u_name} AND PWD = #{password}
     </select>
+
 </mapper>

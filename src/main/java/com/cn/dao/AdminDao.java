@@ -14,4 +14,7 @@ public interface AdminDao {
     //注解的两个参数会自动封装成map集合，括号内即为键
     public Admin findAdminByNameAndPwd(@Param("a_name") String a_name, @Param("a_password") String a_password);
 
+    // 删除用户
+    public int deleteUser(int u_id);
+
 }

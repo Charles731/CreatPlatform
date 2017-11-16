@@ -16,16 +16,24 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;
 
-    public boolean adLogin(String a_name, String a_password) {
-        boolean isAdminExist = false;
-        Admin admin = adminDao.findAdminByNameAndPwd(a_name, a_password);
+    public Admin adLogin(String a_name, String a_password) {
+       Admin admin = adminDao.findAdminByNameAndPwd(a_name,a_password);
         System.out.println("Admin------>" + admin);
         if(admin != null) {
-            isAdminExist = true;
-            System.out.println("admin.a_password------------->" +adminDao.findAdminByNameAndPwd(a_name, a_password).getA_password());
-            return isAdminExist;
+            System.out.println("admin.a_password------------->" + adminDao.findAdminByNameAndPwd(a_name, a_password).getA_password());
+            return admin;
         }
+        return null;
+    }
 
-        return isAdminExist;
+    public boolean deleteUser(int u_id) {
+        boolean isSuccess = false;
+        int number = 0;
+        number = adminDao.deleteUser(u_id);
+        if(number > 0) {
+            isSuccess = true;
+            return isSuccess;
+        }
+        return isSuccess;
     }
 }

@@ -17,5 +17,10 @@
     <select id="findAdminByNameAndPwd" parameterType="map" resultMap="admin">
         SELECT * FROM admin WHERE A_NAME = #{a_name} AND A_PWD = #{a_password}
     </select>
+    
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="int">
+        delete from user1 where U_ID=#{u_id}
+    </delete>
 </mapper>
 
