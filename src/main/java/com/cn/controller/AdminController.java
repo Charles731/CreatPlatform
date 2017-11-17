@@ -5,10 +5,7 @@ import com.cn.entity.User;
 import com.cn.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author vook
@@ -36,7 +33,7 @@ public class AdminController {
 //
 //    }
 //    管理员登录
-      @RequestMapping("/adLogin")
+      @RequestMapping(value = "/adLogin",method = RequestMethod.POST)
       @ResponseBody
       public Admin adLogin(@RequestBody Admin requestAdmin) {
            String a_name = requestAdmin.getA_name();
@@ -46,7 +43,7 @@ public class AdminController {
      }
 
 //    删除用户
-    @RequestMapping("/deleteUser/{u_id}")
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     @ResponseBody
     public boolean deleteUser(@PathVariable("u_id")int u_id) {
         boolean isSuccess = false;
@@ -55,7 +52,7 @@ public class AdminController {
     }
 
    //根据用户名查找用户
-    @RequestMapping("/findUserByName/{u_name}")
+    @RequestMapping(value = "/findUserByName", method = RequestMethod.POST)
     @ResponseBody
     public User findUserByName(@PathVariable("u_name")String u_name) {
         User user = adminService.findUserByName(u_name);

@@ -20,6 +20,7 @@
                    <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                        <property name="supportedMediaTypes">
                            <list>
+                               <value>application/json</value>
                                <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
                                <value>text/html;charset=UTF-8</value>
                            </list>
@@ -30,11 +31,11 @@
 
        </bean>
 
-       <!-- 定义跳转的文件的前后缀，视图模式配置 -->
+       <!--&lt;!&ndash; 定义跳转的文件的前后缀，视图模式配置 &ndash;&gt;
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
            <property name="prefix" value="/WEB-INF/" />
            <property name="suffix" value=".jsp" />
-       </bean>
+       </bean>-->
        <!-- 配置文件上传，如果没有使用文件上传可以不用配置，如果不配，那么配置文件中也不必上传组件包 -->
        <bean id="multipartResolver"
              class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

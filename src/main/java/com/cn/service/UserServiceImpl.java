@@ -29,10 +29,9 @@ public class UserServiceImpl implements UserService {
     }
 
     public User login(String u_name, String password) {
+
         User user = userDao.findUserByNameAndPwd(u_name, password);
-        System.out.println("User------>" + user);
         if(user != null) {
-            System.out.println("user.password------------->" + userDao.findUserByNameAndPwd(u_name, password).getPassword());
             return user;
         }
         return null;
