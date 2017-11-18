@@ -45,7 +45,7 @@ public class AdminController {
 //    删除用户
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     @ResponseBody
-    public boolean deleteUser(@PathVariable("u_id")int u_id) {
+    public boolean deleteUser(@RequestParam("u_id")int u_id) {
         boolean isSuccess = false;
         isSuccess = adminService.deleteUser(u_id);
         return isSuccess;
@@ -54,7 +54,7 @@ public class AdminController {
    //根据用户名查找用户
     @RequestMapping(value = "/findUserByName", method = RequestMethod.POST)
     @ResponseBody
-    public User findUserByName(@PathVariable("u_name")String u_name) {
+    public User findUserByName(@RequestParam("u_name")String u_name) {
         User user = adminService.findUserByName(u_name);
         return user;
     }
